@@ -5,7 +5,7 @@ public class Controller {
     }
 
     public void startGame() {
-        
+        welcome();
     }
 
 }
