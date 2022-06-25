@@ -26,4 +26,12 @@ public class InputUtil {
         reader.close();
         return size;
     }
+
+    public boolean playAgain() {
+        Scanner reader = new Scanner(System.in);
+        System.out.println("Play again? (Y/N): ");
+        boolean again = reader.nextBoolean();
+        reader.close();
+        return again;
+    }
 }
