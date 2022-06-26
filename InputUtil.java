@@ -29,8 +29,8 @@ public class InputUtil {
 
     public boolean playAgain() {
         Scanner reader = new Scanner(System.in);
-        System.out.println("Play again? (Y/N): ");
-        boolean again = reader.nextBoolean();
+        System.out.print("Play again? (Y/N): ");
+        boolean again = "Y".equals(reader.next());
         reader.close();
         return again;
     }
