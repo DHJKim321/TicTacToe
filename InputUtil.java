@@ -7,25 +7,21 @@ public class InputUtil {
     }
 
     public void sayTurn(int turn) {
-        if (turn == 0) {
-            System.out.println("It is Player 1's turn!");
+        if (turn % 2 == 0) {
+            System.out.print("It is Player 1's turn!\n");
         }
         else {
-            System.out.println("It is Player 2's turn!");
+            System.out.print("It is Player 2's turn!\n");
         }
-    }
-
-    public void sayPlayerTurn(String player) {
-        System.out.printf("It is %s's turn!", player);
     }
 
     public void playerWon(int player) {
-        System.out.printf("Player %d has won!", player);
+        System.out.printf("Player %d has won!\n", player);
     }
 
     public int askForBoardSize() {
         Scanner reader = new Scanner(System.in);
-        System.out.println("How big do you want the board to be?: ");
+        System.out.print("How big do you want the board to be?: ");
         int size = reader.nextInt();
         reader.close();
         return size;

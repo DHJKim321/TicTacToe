@@ -11,7 +11,6 @@ public class Controller {
         Model model = new Model(size);
         while (true) {
             view.drawBoard(model.getBoard());
-            inputUtil.sayPlayerTurn(model.getCurrPlayer());
             inputUtil.sayTurn(model.getTurn());
             model.nextTurn();
         }
