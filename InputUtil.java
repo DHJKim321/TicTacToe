@@ -15,6 +15,10 @@ public class InputUtil {
         }
     }
 
+    public void sayPlayerTurn(String player) {
+        System.out.printf("It is %s's turn!", player);
+    }
+
     public void playerWon(int player) {
         System.out.printf("Player %d has won!", player);
     }
