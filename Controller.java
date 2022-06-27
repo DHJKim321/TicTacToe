@@ -8,7 +8,8 @@ public class Controller {
         inputUtil.welcome();
 
         int size = inputUtil.askForBoardSize();
-        Model model = new Model(size);
+        int consec = inputUtil.askForConsec();
+        Model model = new Model(size, consec);
         while (true) {
             view.drawBoard(model.getBoard());
             inputUtil.sayTurn(model.getTurn());

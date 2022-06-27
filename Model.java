@@ -5,10 +5,12 @@ public class Model {
     private String[][] board;
     private final String P1 = "O";
     private final String P2 = "X";
+    private final int CONSEC;
 
-    public Model(int size) {
+    public Model(int size, int CONSEC) {
         this.size = size;
         this.board = new String[size][size];
+        this.CONSEC = CONSEC;
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
                 board[i][j] = "-";
@@ -35,6 +37,10 @@ public class Model {
 
     public void nextTurn() {
         this.turn++;
+    }
+
+    public boolean horizontalConsec() {
+        
     }
     
 }

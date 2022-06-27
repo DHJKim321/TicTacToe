@@ -27,6 +27,14 @@ public class InputUtil {
         return size;
     }
 
+    public int askForConsec() {
+        Scanner reader = new Scanner(System.in);
+        System.out.print("How many consecutive pieces for a win?: ");
+        int consec = reader.nextInt();
+        reader.close();
+        return consec;
+    }
+
     public boolean playAgain() {
         Scanner reader = new Scanner(System.in);
         System.out.print("Play again? (Y/N): ");
