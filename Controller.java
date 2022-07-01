@@ -10,7 +10,7 @@ public class Controller {
         int size = inputUtil.askForBoardSize();
         int consec = inputUtil.askForConsec();
         Model model = new Model(size, consec);
-        while (true) {
+        while (!model.isHorizontalConsec()) {
             view.drawBoard(model.getBoard());
             inputUtil.sayTurn(model.getTurn());
             model.nextTurn();

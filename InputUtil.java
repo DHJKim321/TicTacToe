@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class InputUtil {
+    private static Scanner reader = new Scanner(System.in);
     
     public void welcome() {
         System.out.println("Welcome to TicTacToe!");
@@ -20,26 +21,24 @@ public class InputUtil {
     }
 
     public int askForBoardSize() {
-        Scanner reader = new Scanner(System.in);
         System.out.print("How big do you want the board to be?: ");
         int size = reader.nextInt();
-        reader.close();
         return size;
     }
 
     public int askForConsec() {
-        Scanner reader = new Scanner(System.in);
         System.out.print("How many consecutive pieces for a win?: ");
         int consec = reader.nextInt();
-        reader.close();
         return consec;
     }
 
+    public void checkValidToken() {
+        System.out.print("");
+    }
+
     public boolean playAgain() {
-        Scanner reader = new Scanner(System.in);
         System.out.print("Play again? (Y/N): ");
         boolean again = "Y".equals(reader.next());
-        reader.close();
         return again;
     }
 }

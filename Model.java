@@ -5,12 +5,12 @@ public class Model {
     private String[][] board;
     private final String P1 = "O";
     private final String P2 = "X";
-    private final int CONSEC;
+    private int consec;
 
-    public Model(int size, int CONSEC) {
+    public Model(int size, int consec) {
         this.size = size;
         this.board = new String[size][size];
-        this.CONSEC = CONSEC;
+        this.consec = consec;
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
                 board[i][j] = "-";
@@ -39,8 +39,23 @@ public class Model {
         this.turn++;
     }
 
-    public boolean horizontalConsec() {
-        
+    public void drawToken(int i, int j) {
+        String token = getCurrPlayer();
+        this.board[i][j] = token;
+    }
+
+    public boolean isHorizontalConsec() {
+        for (int i = 0; i < this.board.length; i++) {
+            int counter = 0;
+            int j = 0;
+            while (this.board[i][j].equals(getCurrPlayer())) {
+                counter++;
+                if (counter == this.consec) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
     
 }
