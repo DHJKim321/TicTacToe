@@ -32,8 +32,16 @@ public class InputUtil {
         return consec;
     }
 
-    public void checkValidToken() {
-        System.out.print("");
+    public int askForRow() {
+        System.out.print("Input row number: ");
+        int row = reader.nextInt();
+        return row - 1;
+    }
+
+    public int askForCol() {
+        System.out.print("Input column number: ");
+        int col = reader.nextInt();
+        return col - 1;
     }
 
     public boolean playAgain() {

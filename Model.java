@@ -40,8 +40,7 @@ public class Model {
     }
 
     public void drawToken(int i, int j) {
-        String token = getCurrPlayer();
-        this.board[i][j] = token;
+        this.board[i][j] = getCurrPlayer();
     }
 
     public boolean isHorizontalConsec() {
