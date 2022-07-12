@@ -30,6 +30,15 @@ public class Model {
             return P2;
         }
     }
+
+    public int getCurrPlayerInt() {
+        if (this.turn % 2 == 0) {
+            return 1;
+        }
+        else {
+            return 2;
+        }
+    }
     
     public int getTurn() {
         return turn;
@@ -46,15 +55,20 @@ public class Model {
     public boolean isHorizontalConsec() {
         for (int i = 0; i < this.board.length; i++) {
             int counter = 0;
-            int j = 0;
-            while (this.board[i][j].equals(getCurrPlayer())) {
-                counter++;
+            for (int j = 0; j < this.board.length; j++) {
+                if (this.board[i][j].equals(getCurrPlayer())) {
+                    counter++;
+                }
                 if (counter == this.consec) {
                     return true;
                 }
             }
         }
         return false;
+    }
+
+    public boolean hasGameEnded() {
+        return isHorizontalConsec();
     }
     
 }

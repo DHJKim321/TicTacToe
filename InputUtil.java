@@ -16,10 +16,6 @@ public class InputUtil {
         }
     }
 
-    public void playerWon(int player) {
-        System.out.printf("Player %d has won!\n", player);
-    }
-
     public int askForBoardSize() {
         System.out.print("How big do you want the board to be?: ");
         int size = reader.nextInt();
@@ -42,6 +38,10 @@ public class InputUtil {
         System.out.print("Input column number: ");
         int col = reader.nextInt();
         return col - 1;
+    }
+
+    public void playerWon(int player) {
+        System.out.printf("Player %d has won!\n", player);
     }
 
     public boolean playAgain() {
