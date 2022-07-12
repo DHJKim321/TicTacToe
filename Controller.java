@@ -24,6 +24,7 @@ public class Controller {
             }
         } while (!model.hasGameEnded());
 
+        view.drawBoard(model.getBoard());
         inputUtil.playerWon(model.getCurrPlayerInt());
     }
 

@@ -67,8 +67,23 @@ public class Model {
         return false;
     }
 
+    public boolean isVerticalConsec() {
+        for (int i = 0; i < this.board.length; i++) {
+            int counter = 0;
+            for (int j = 0; j < this.board.length; j++) {
+                if (this.board[j][i].equals(getCurrPlayer())) {
+                    counter++;
+                }
+                if (counter == this.consec) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
     public boolean hasGameEnded() {
-        return isHorizontalConsec();
+        return isHorizontalConsec() || isVerticalConsec();
     }
     
 }
