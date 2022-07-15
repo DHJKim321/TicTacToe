@@ -1,5 +1,4 @@
 public class Controller {
-    Model model;
     
     public void startGame() {
         InputUtil inputUtil = new InputUtil();
