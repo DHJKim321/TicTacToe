@@ -40,13 +40,21 @@ public class InputUtil {
         return col - 1;
     }
 
+    public void placeTaken(int i, int j) {
+        System.out.printf("Row %d col %d is already taken!\n", i + 1, j + 1);
+    }
+
     public void playerWon(int player) {
-        System.out.printf("Player %d has won!\n", player);
+        System.out.printf("Player %d has won!", player);
     }
 
     public boolean playAgain() {
         System.out.print("Play again? (Y/N): ");
         boolean again = "Y".equals(reader.next());
         return again;
+    }
+
+    public void thank() {
+        System.out.print("Thank you for playing!");
     }
 }

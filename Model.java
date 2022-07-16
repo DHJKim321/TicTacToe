@@ -52,6 +52,15 @@ public class Model {
         this.board[i][j] = getCurrPlayer();
     }
 
+    public boolean isPlaceEmpty(int i, int j) {
+        if (this.board[i][j].equals("-")) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
     public boolean isHorizontalConsec() {
         for (int i = 0; i < this.board.length; i++) {
             int counter = 0;

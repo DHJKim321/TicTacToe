@@ -7,7 +7,6 @@ public class Controller {
         inputUtil.welcome();
 
         int size = inputUtil.askForBoardSize();
-        //int consec = inputUtil.askForConsec();
         Model model = new Model(size, size);
         do {
             view.drawBoard(model.getBoard());
@@ -15,6 +14,11 @@ public class Controller {
 
             int row = inputUtil.askForRow();
             int col = inputUtil.askForCol();
+            while (!model.isPlaceEmpty(row, col)) {
+                inputUtil.placeTaken(row, col);
+                row = inputUtil.askForRow();
+                col = inputUtil.askForCol();
+            }
             model.drawToken(row, col);
 
             boolean end = model.hasGameEnded();
@@ -25,6 +29,13 @@ public class Controller {
 
         view.drawBoard(model.getBoard());
         inputUtil.playerWon(model.getCurrPlayerInt());
+
+        if (inputUtil.playAgain()) {
+            startGame();
+        }
+        else {
+            inputUtil.thank();
+        }
     }
 
 }
