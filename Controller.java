@@ -7,7 +7,7 @@ public class Controller {
         inputUtil.welcome();
 
         int size = inputUtil.askForBoardSize();
-        Model model = new Model(size, size);
+        Model model = new Model(size);
         do {
             view.drawBoard(model.getBoard());
             inputUtil.sayTurn(model.getTurn());

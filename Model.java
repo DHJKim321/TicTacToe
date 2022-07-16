@@ -5,12 +5,10 @@ public class Model {
     private String[][] board;
     private final String P1 = "O";
     private final String P2 = "X";
-    private int consec;
 
-    public Model(int size, int consec) {
+    public Model(int size) {
         this.size = size;
         this.board = new String[size][size];
-        this.consec = consec;
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
                 board[i][j] = "-";
@@ -68,7 +66,7 @@ public class Model {
                 if (this.board[i][j].equals(getCurrPlayer())) {
                     counter++;
                 }
-                if (counter == this.consec) {
+                if (counter == this.size) {
                     return true;
                 }
             }
@@ -83,7 +81,7 @@ public class Model {
                 if (this.board[j][i].equals(getCurrPlayer())) {
                     counter++;
                 }
-                if (counter == this.consec) {
+                if (counter == this.size) {
                     return true;
                 }
             }
@@ -97,7 +95,7 @@ public class Model {
             if (this.board[i][i].equals(getCurrPlayer())) {
                 counter++;
             }
-            if (counter == this.consec) {
+            if (counter == this.size) {
                 return true;
             }
         }
@@ -106,7 +104,7 @@ public class Model {
             if (this.board[i][this.board.length - 1 - i].equals(getCurrPlayer())) {
                 counter++;
             }
-            if (counter == this.consec) {
+            if (counter == this.size) {
                 return true;
             }
         }
