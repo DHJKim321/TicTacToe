@@ -1,3 +1,5 @@
 This is my TicTacToe project!
 
-My first goal is to get the regular 3 by 3 game working, then I will aim to add a customisable board size, and finally an AI which uses minimax to play the game.
+Finished: Normal 3x3 boartd is working, along with a customisable board that supports any N by N configuration.
+
+TODO: Add Minimax algorithm
